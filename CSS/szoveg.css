@@ -1,0 +1,85 @@
+.torzs {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    animation: fadeIn 1s;
+}
+
+.szoveg {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.eler {
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.forras {
+    text-align: right;
+    font-style: italic;
+}
+
+.map {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    margin-top: -100px;
+    margin-left: -100px;
+    animation: fadeIn 1s;
+}
+
+.email-form {
+    position: absolute;
+    left: 60%;
+    top: 30%;
+    margin-top: -100px;
+    margin-left: -100px;
+    animation: fadeIn 1s;
+}
+
+.msgbox textarea {
+    resize: none;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3A3B3C;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.email-form .btn {
+    position: absolute;
+    margin-top: 110px;
+}
+
+.email-form h2 {
+    text-align: center;
+}
+
+textarea input {
+    position: absolute;
+    margin-top: 15px;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #3A3B3C;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.msgbox {
+    position: relative;
+    width: 100%;
+    height: 28px;
+    border-bottom: 2px solid #3A3B3C;
+    margin: 30px 0;
+    margin-left: 5px;
+    font-size: medium;
+}
