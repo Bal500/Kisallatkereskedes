@@ -26,8 +26,8 @@
 #chin1 .chinek .chin-con .chin img {
     padding-top: 20px;
     padding-bottom: 10px;
-    max-width: 30%;
-    height: auto;
+    width: 30%;
+    height: 50%;
     border-radius: 80px;
     border: #3A3B3C;
     border-image-width: auto;
@@ -39,8 +39,8 @@
 }
 
 #chin1 .chinek .chin-con .chin {
-    margin: 0 10%;
-    position: absolute;
+    margin: 2% 15% 5% 15%;
+    position: relative;
     background: transparent;
     border: 2px solid #3A3B3C;
     border-radius: 20px;
@@ -54,13 +54,7 @@
     transition: height .2s ease;
     width: 70%;
     height: auto;
-    padding: 10px 0px;
 }
-
-#chin1 .chinek .chin-con .chin:hover {
-    box-shadow: 20px 20px #3A3B3C05;
-}
-
 
 #chin1 .chinek .chin-con .chin #desc {
     padding: 10px;
