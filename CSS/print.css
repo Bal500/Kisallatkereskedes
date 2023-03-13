@@ -2,7 +2,7 @@
     background: transparent;
     outline: none;
     border: none;
-    font-size: large;
+    font-size: larger;
     padding-top: 15px;
     animation: fadeIn 1s;
     transition: height .2s ease;
