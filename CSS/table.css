@@ -7,10 +7,14 @@
 #chin1 h2 {
     padding-top: 30px;
     padding-bottom: 5px;
+    animation: fadeIn 1s;
+    transition: height .2s ease;
 }
 
 #chin1 p {
     padding-bottom: 40px;
+    animation: fadeIn 1s;
+    transition: height .2s ease;
 }
 
 #chin1 .chinek .chin-con {

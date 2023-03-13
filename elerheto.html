@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./CSS/iconbar.css">
     <link rel="stylesheet" href="./CSS/login.css">
     <link rel="stylesheet" href="./CSS/table.css">
+    <link rel="stylesheet" href="./CSS/print.css">
     <link href="./assets/css/fontawesome.css" rel="stylesheet">
     <link href="./assets/css/solid.css" rel="stylesheet">
     <link rel="icon" href="./assets/kepek/csinsegg.ico">
@@ -25,8 +26,11 @@
 
     <section id="chin1" class="chinwrap">
         <h2>Elérhető Csincsillák</h2>
-        <p>Válogass elérhető csincsilláink közül!</p>
-        <div class="chinek">
+        <p id="bemu">Válogass elérhető csincsilláink közül!</p>
+
+        <button id="printbtn"><i class="fa-solid fa-print"></i></button>
+
+        <div class="chinek" id="print">
             <div class="chin-con">
                 <div class="chin">
                     <span id="nev">Puffancs</span>
@@ -120,5 +124,6 @@
             </div>
         </div>
     </section>
+    <script src="./assets/JS/print.js"></script>
 </body>
 </html>

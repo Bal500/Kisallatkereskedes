@@ -1,0 +1,26 @@
+#printbtn {
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: large;
+    padding-top: 15px;
+    animation: fadeIn 1s;
+    transition: height .2s ease;
+}
+
+#printbtn:hover {
+    cursor: pointer;
+}
+
+@media print {
+    #chin1 h2,
+    #printbtn,
+    #bemu,
+    .icon-bar {
+        display: none;;
+    }
+
+    #print, #print * {
+        display: block;
+    }
+}
