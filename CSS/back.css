@@ -1,0 +1,14 @@
+#backbtn {
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: larger;
+    padding-top: 15px;
+    margin-right: 1300px;
+    animation: fadeIn 1s;
+    transition: height .2s ease;
+}
+
+#backbtn:hover {
+    cursor: pointer;
+}

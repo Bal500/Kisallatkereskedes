@@ -4,6 +4,7 @@
     border: none;
     font-size: larger;
     padding-top: 15px;
+    padding-left: 10px;
     animation: fadeIn 1s;
     transition: height .2s ease;
 }
@@ -16,6 +17,7 @@
     #chin1 h2,
     #printbtn,
     #bemu,
+    #non,
     .icon-bar {
         display: none;;
     }

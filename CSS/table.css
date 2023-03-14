@@ -126,6 +126,11 @@
     font-weight: 600;
 }
 
+#chin1 .chinek .chin-con .prod #price {
+    margin-right: 10px;
+    font-weight: 600;
+}
+
 #chin1 .chinek .chin-con .prod:hover {
     cursor: pointer;
 }
