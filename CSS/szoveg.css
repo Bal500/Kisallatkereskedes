@@ -98,3 +98,13 @@ textarea input {
 #chinbtn:hover {
     cursor: pointer;
 }
+
+table, th, td {
+    border: 1px solid #3A3B3C;
+    padding: 5px;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
