@@ -21,13 +21,13 @@
     padding: 20px 0px;
 }
 
-#chin1 .chinek .chin-con .chin #nev {
+#chin1 .chinek .chin-con .chin .nev {
     padding: 0px 10px;
     font-size: x-large;
     font-weight: 600;
 }
 
-#chin1 .chinek .chin-con .prod #nev {
+#chin1 .chinek .chin-con .prod .nev {
     padding: 0px 10px;
     font-size: x-large;
     font-weight: 600;
@@ -109,24 +109,24 @@
     text-decoration: none;
 }
 
-#chin1 .chinek .chin-con .chin #desc {
+#chin1 .chinek .chin-con .chin .desc {
     padding: 10px;
     text-align: center;
     height: auto;
 }
 
-#chin1 .chinek .chin-con .prod #desc {
+#chin1 .chinek .chin-con .prod .desc {
     padding: 10px;
     text-align: center;
     height: auto;
 }
 
-#chin1 .chinek .chin-con .chin #price {
+#chin1 .chinek .chin-con .chin .price {
     margin-right: 10px;
     font-weight: 600;
 }
 
-#chin1 .chinek .chin-con .prod #price {
+#chin1 .chinek .chin-con .prod .price {
     margin-right: 10px;
     font-weight: 600;
 }
