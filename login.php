@@ -19,38 +19,40 @@
         <a class="inactive" href="tartasa.html"><i class="fa-solid fa-house"></i></a>
         <a class="inactive" href="jellemzoi.html"><i class="fa-solid fa-venus-mars"></i></a>
         <a class="inactive" href="elerhetoseg.html"><i class="fa-solid fa-phone"></i></a>
-        <a class="active" href="login.html"><i class="fa-solid fa-user"></i></a>
+        <a class="active" href="login.php"><i class="fa-solid fa-user"></i></a>
     </div>
 
     <div class="wrapper">
-        <div class="login-form">
-            <h2>Bejelentkezés</h2>
-            <form action="#">
-                <div class="input">
-                    <span class="icon"><i class="fa-solid fa-at"></i></span>
-                    <input type="email" required>
-                    <label>E-mail</label>
-                </div>
+        <form method="post" id="login-method">
+            <div class="login-form">
+                <h2>Bejelentkezés</h2>
+                <form action="#">
+                    <div class="input">
+                        <span class="icon"><i class="fa-solid fa-at"></i></span>
+                        <input type="email" required>
+                        <label>E-mail</label>
+                    </div>
+    
+                    <div class="input">
+                        <span class="icon"><i class="fa-solid fa-key"></i></span>
+                        <input type="password" required>
+                        <label>Jelszó</label>
+                    </div>
+    
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">Emlékezz rám | </label><a href="#">Elfelejtetted a jelszavad?</a>
+                    </div>
+    
+                    <button type="submit" class="btn">Belépés</button>
+    
+                    <div class="login-regist">
+                        <p>Még nincs fiókod? <a href="#" class="regist-link">Regisztrálj!</a></p>
+                    </div>
+                </form>
+            </div>
+        </form>
 
-                <div class="input">
-                    <span class="icon"><i class="fa-solid fa-key"></i></span>
-                    <input type="password" required>
-                    <label>Jelszó</label>
-                </div>
-
-                <div class="remember-forgot">
-                    <label><input type="checkbox">Emlékezz rám | </label><a href="#">Elfelejtetted a jelszavad?</a>
-                </div>
-
-                <button type="submit" class="btn">Belépés</button>
-
-                <div class="login-regist">
-                    <p>Még nincs fiókod? <a href="#" class="regist-link">Regisztrálj!</a></p>
-                </div>
-            </form>
-        </div>
-
-
+        <form method="post" id="register-method"></form>
         <div class="regist-form">
             <h2>Regisztráció</h2>
             <form action="#">
