@@ -9,11 +9,6 @@
     transition: height .2s ease;
 }
 
-#printbtn:hover,
-#printbtne:hover {
-    cursor: pointer;
-}
-
 #printbtne {
     background: transparent;
     outline: none;
@@ -23,6 +18,11 @@
     transform: translateY(-50%);
     animation: fadeIn 1s;
     transition: height .2s ease;
+}
+
+#printbtn:hover,
+#printbtne:hover {
+    cursor: pointer;
 }
 
 @media print {
