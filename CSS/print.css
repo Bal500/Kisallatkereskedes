@@ -10,11 +10,11 @@
 }
 
 #printbtn:hover,
-#printbtn_e:hover {
+#printbtne:hover {
     cursor: pointer;
 }
 
-#printbtn_e {
+#printbtne {
     background: transparent;
     outline: none;
     border: none;
@@ -28,7 +28,7 @@
 @media print {
     #chin1 h2,
     #printbtn,
-    #printbtn_e,
+    #printbtne,
     #backbtn,
     #bemu,
     #non,
