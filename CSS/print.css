@@ -9,8 +9,20 @@
     transition: height .2s ease;
 }
 
-#printbtn:hover {
+#printbtn:hover,
+#printbtn_e:hover {
     cursor: pointer;
+}
+
+#printbtn_e {
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: larger;
+    padding-top: 15px;
+    transform: translateY(-50%);
+    animation: fadeIn 1s;
+    transition: height .2s ease;
 }
 
 @media print {
