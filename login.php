@@ -1,3 +1,25 @@
+<!-- <?php
+    //session_start();
+
+    include("connection.php");
+
+    $error_regdata = "A megadott adatok nem megfelelőek, próbálkozz újra!";
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        $entered_name = $_POST['name_register'];
+        $entered_email = $_POST['email_register'];
+        $entered_password = $_POST['password_register'];
+        $entered_password2 = $_POST['password2_register'];
+
+        if (!empty($entered_name) || !empty($entered_password) || $entered_password != $entered_password2 || !is_numeric($entered_name)) {
+            $query = "insert into user_form (name, email, password) values ('$entered_name', '$entered_email', '$entered_password')";
+            mysqli_query($conn, $query);
+            die();
+        } else {
+            echo '<span class="error_msg">'.$error_regdata.'</span>';
+        }
+    }
+?> -->
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -21,7 +43,6 @@
         <a class="inactive" href="elerhetoseg.html"><i class="fa-solid fa-phone"></i></a>
         <a class="active" href="login.php"><i class="fa-solid fa-user"></i></a>
     </div>
-
     <div class="wrapper">
         <form method="post" id="login-method">
             <div class="login-form">
@@ -52,47 +73,39 @@
             </div>
         </form>
 
-        <form method="post" id="register-method"></form>
-        <div class="regist-form">
-            <h2>Regisztráció</h2>
-            <form action="#">
-                <div class="input">
-                    <span class="icon"><i class="fa-solid fa-signature"></i></span>
-                    <input type="text" required>
-                    <label>Név</label>
-                </div>
-
-                <div class="input">
-                    <span class="icon"><i class="fa-solid fa-at"></i></span>
-                    <input type="email" required>
-                    <label>E-mail</label>
-                </div>
-
-                <div class="input">
-                    <span class="icon"><i class="fa-solid fa-key"></i></span>
-                    <input type="password" required>
-                    <label>Jelszó</label>
-                </div>
-
-                <div class="input">
-                    <span class="icon"><i class="fa-solid fa-key"></i></span>
-                    <input type="password" required>
-                    <label>Jelszó újra</label>
-                </div>
-
-                <div class="aszf">
-                    <label><input type="checkbox">ÁSZF elfogadása</label>
-                </div>
-
-                <button type="submit" class="btn">Regisztráció</button>
-
-                <div class="login-regist">
-                    <p>Van már fiókod? <a href="#" class="login-link">Jelentkezz be!</a></p>
-                </div>
-            </form>
-        </div>
+        <form method="post" id="register-method">
+            <div class="regist-form">
+                <h2>Regisztráció</h2>
+                    <div class="input">
+                        <span class="icon"><i class="fa-solid fa-signature"></i></span>
+                        <input type="text" name="name_regsiter" required>
+                        <label>Név</label>
+                    </div>
+                    <div class="input">
+                        <span class="icon"><i class="fa-solid fa-at"></i></span>
+                        <input type="email" name="email_regsiter" required>
+                        <label>E-mail</label>
+                    </div>
+                    <div class="input">
+                        <span class="icon"><i class="fa-solid fa-key"></i></span>
+                        <input type="password" name="password_regsiter" required>
+                        <label>Jelszó</label>
+                    </div>
+                    <div class="input">
+                        <span class="icon"><i class="fa-solid fa-key"></i></span>
+                        <input type="password" name="password2_regsiter" required>
+                        <label>Jelszó újra</label>
+                    </div>
+                    <div class="aszf">
+                        <label><input type="checkbox">ÁSZF elfogadása</label>
+                    </div>
+                    <button type="submit" class="btn" formt="register-method">Regisztráció</button>
+                    <div class="login-regist">
+                        <p>Van már fiókod? <a href="#" class="login-link">Jelentkezz be!</a></p>
+                    </div>
+            </div>
+        </form>
     </div>
-
     <script src="./assets/JS/login.js"></script>
 </body>
 </html>
