@@ -34,16 +34,16 @@
     transform: translateX(-400px);
 }
 
-.wrapper .regist-form {
+.wrapper #register-method {
     position: absolute;
     transition: none;
     transform: translateX(400px);
 }
 
-.wrapper.active .regist-form {
+.wrapper.active #register-method {
     padding: 40px;
     transition: transform .18s ease;
-    transform: translateX(0);
+    transform: translateX(0px);
 }
 
 .login-form h2 {
@@ -52,7 +52,7 @@
     text-align: center;
 }
 
-.regist-form h2 {
+#regist-method h2 {
     font-size: 2em;
     color: #3A3B3C;
     text-align: center;
@@ -176,4 +176,24 @@
 
 .login-regist p a:hover {
     text-decoration: underline;
+}
+
+form .error-msg {
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+    background: crimson;
+    color: white;
+    border-radius: 20px;
+    animation: fadeIn 1s;
+}
+
+form .success-msg {
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+    background: green;
+    color: white;
+    border-radius: 20px;
+    animation: fadeIn 1s;
 }
