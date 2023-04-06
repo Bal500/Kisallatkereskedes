@@ -46,13 +46,7 @@
     transform: translateX(0px);
 }
 
-.login-form h2 {
-    font-size: 2em;
-    color: #3A3B3C;
-    text-align: center;
-}
-
-#regist-method h2 {
+h2 {
     font-size: 2em;
     color: #3A3B3C;
     text-align: center;
