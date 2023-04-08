@@ -21,14 +21,14 @@
     <div class="icon-bar">
         <a class="intactive" href="elerheto.html"><i class="fa fa-paw"></i></a>
         <a class="inactive" href="kiegeszito.html"><i class="fa-solid fa-baseball"></i></a>
-        <a class="active" href="tartasa.html"><i class="fa-solid fa-house"></i></a>
+        <a class="inactive" href="tartasa.html"><i class="fa-solid fa-house"></i></a>
         <a class="inactive" href="jellemzoi.html"><i class="fa-solid fa-venus-mars"></i></a>
         <a class="inactive" href="elerhetoseg.html"><i class="fa-solid fa-phone"></i></a>
         <?php
             if (isset($_SESSION["id"])) {
-                echo "<a class='inactive' href='user.php'><i class='fa-solid fa-user'></i></a>";
+                echo "<a class='active' href='user.php'><i class='fa-solid fa-user'></i></a>";
             } else {
-                echo "<a class='inactive' href='login.php'><i class='fa-solid fa-user'></i></a>";
+                echo "<a class='active' href='login.php'><i class='fa-solid fa-user'></i></a>";
             }
         ?>
     </div>

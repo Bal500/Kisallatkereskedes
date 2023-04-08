@@ -19,7 +19,13 @@
         <a class="inactive" href="tartasa.html"><i class="fa-solid fa-house"></i></a>
         <a class="inactive" href="jellemzoi.html"><i class="fa-solid fa-venus-mars"></i></a>
         <a class="inactive" href="elerhetoseg.html"><i class="fa-solid fa-phone"></i></a>
-        <a class="active" href="login.php"><i class="fa-solid fa-user"></i></a>
+        <?php
+            if (isset($_SESSION["id"])) {
+                echo "<a class='active' href='user.php'><i class='fa-solid fa-user'></i></a>";
+            } else {
+                echo "<a class='active' href='login.php'><i class='fa-solid fa-user'></i></a>";
+            }
+        ?>
     </div>
     <div class="wrapper">
         <form action="loginmethod.inc.php" method="post" id="login-method">
