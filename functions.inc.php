@@ -69,7 +69,6 @@
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("location: login.php?error=stmtfailed");
-            //header("location: login.php#reg");
             exit();
         }
 
@@ -78,7 +77,6 @@
         mysqli_stmt_bind_param($stmt, "sss", $name, $email, $hashedPassword);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
-        //$success_reg = "A regisztáció sikeres volt!";
         header("location: login.php#reg?error=none");
         exit();
     }
@@ -117,6 +115,7 @@
             session_start();
             $_SESSION["id"] = $emailExists["id"];
             $_SESSION["email"] = $emailExists["email"];
+            $_SESSION["name"] = $emailExists["name"];
             header("location: elerheto.php");
             exit();
         }
