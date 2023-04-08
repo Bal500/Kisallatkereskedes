@@ -71,12 +71,13 @@
     color: #3A3B3C;
     font-weight: 500;
     pointer-events: none;
-    transition: .5s;
+    transition: all .5s ease-in-out;
 }
 
-.input input:focus~label,
-.input input:valid~label {
+.input input:focus ~ label,
+.input input:valid ~ label {
     top: -23px;
+    transition: all .5s ease-in-out;
 }
 
 .input input {
