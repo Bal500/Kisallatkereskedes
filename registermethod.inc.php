@@ -10,32 +10,51 @@
 
         if (emptyInputSignup($name, $email, $password, $password2) !== false) {
             //header("location: login.php?error=emptyinput");
-            header("location: login.php#");
+            echo "<script>
+                if (confirm('Hiba! Egyik mező sem lehet üres! Próbáld újra!')) {
+                    window.location.href = 'login.php#reg';
+                }
+            </script>";
             exit();    
         }
         if (invalidUid($name) !== false) {
             //header("location: login.php?error=invaliduid");
-            header("location: login.php#reg");
+            echo "<script>
+                if (confirm('Hiba! A neved nem állhat számokból! Próbáld újra!')) {
+                    window.location.href = 'login.php#reg';
+                }
+            </script>";
             exit();    
         }
         if (invalidEmail($email) !== false) {
             //header("location: login.php?error=invalidemail");
-            header("location: login.php#reg");
+            echo "<script>
+                if (confirm('Hiba! Az e-mail cím hibás! Próbáld újra!')) {
+                    window.location.href = 'login.php#reg';
+                }
+            </script>";
             exit();
         }
         if (pwdMatch($password, $password2) !== false) {
             //header("location: login.php?error=passwordsdontmatch");
-            header("location: login.php#reg");
+            echo "<script>
+                if (confirm('Hiba! A jelszavak nem egyeznek! Próbáld újra!')) {
+                    window.location.href = 'login.php#reg';
+                }
+            </script>";
             exit();
         }
         if (emailExists($conn, $email) !== false) {
             //header("location: login.php?error=emailtaken");
-            header("location: login.php#reg");
+            echo "<script>
+                if (confirm('Hiba! Az e-mail cím már használatban van! Próbáld újra!')) {
+                    window.location.href = 'login.php#reg';
+                }
+            </script>";
             exit();
         }
 
         createUser($conn, $name, $email, $password);
-
     } else {
         //header("location: login.php");
         header("location: login.php#log");

@@ -1,7 +1,3 @@
-<?php
-    
-?>
-
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -58,6 +54,14 @@
         <form action="registermethod.inc.php" method="post" id="register-method">
             <div class="regist-form">
                 <h2>Regisztráció</h2>
+                    <?php
+                        if (str_contains($error_msg, '!')) {
+                            echo '<span class="error-msg">'.$error_reg.'</span>';
+                        }
+                        if (str_contains($success_msg, '!')) {
+                            echo '<span class="success-msg">'.$success_reg.'</span>';
+                        }
+                    ?>
                     <div class="input">
                         <span class="icon"><i class="fa-solid fa-signature"></i></span>
                         <input type="text" name="name_register" required>
