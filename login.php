@@ -1,25 +1,3 @@
-<!-- <?php
-    session_start();
-
-    include("connection.php");
-
-    $error_regdata = "A megadott adatok nem megfelelőek, próbálkozz újra!";
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        $entered_name = $_POST['name_register'];
-        $entered_email = $_POST['email_register'];
-        $entered_password = $_POST['password_register'];
-        $entered_password2 = $_POST['password2_register'];
-
-        if (!empty($entered_name) || !empty($entered_password) || $entered_password != $entered_password2 || !is_numeric($entered_name)) {
-            $query = "insert into user_form (name, email, password) values ('$entered_name', '$entered_email', '$entered_password')";
-            mysqli_query($conn, $query);
-            die();
-        } else {
-            echo '<span class="error_msg">'.$error_regdata.'</span>';
-        }
-    }
-?> -->
-
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -44,7 +22,7 @@
         <a class="active" href="login.php"><i class="fa-solid fa-user"></i></a>
     </div>
     <div class="wrapper">
-        <form method="post" id="login-method">
+        <form action="loginmethod.inc.php" method="post" id="login-method">
             <div class="login-form">
                 <h2>Bejelentkezés</h2>
                 <form action="#">
@@ -67,41 +45,41 @@
                     <button type="submit" class="btn">Belépés</button>
     
                     <div class="login-regist">
-                        <p>Még nincs fiókod? <a href="#" class="regist-link">Regisztrálj!</a></p>
+                        <p>Még nincs fiókod? <a href="#reg" class="regist-link">Regisztrálj!</a></p>
                     </div>
                 </form>
             </div>
         </form>
 
-        <form method="post" id="register-method">
+        <form action="registermethod.inc.php" method="post" id="register-method">
             <div class="regist-form">
                 <h2>Regisztráció</h2>
                     <div class="input">
                         <span class="icon"><i class="fa-solid fa-signature"></i></span>
-                        <input type="text" name="name_regsiter" required>
+                        <input type="text" name="name_register" required>
                         <label>Név</label>
                     </div>
                     <div class="input">
                         <span class="icon"><i class="fa-solid fa-at"></i></span>
-                        <input type="email" name="email_regsiter" required>
+                        <input type="email" name="email_register" required>
                         <label>E-mail</label>
                     </div>
                     <div class="input">
                         <span class="icon"><i class="fa-solid fa-key"></i></span>
-                        <input type="password" name="password_regsiter" required>
+                        <input type="password" name="password_register" required>
                         <label>Jelszó</label>
                     </div>
                     <div class="input">
                         <span class="icon"><i class="fa-solid fa-key"></i></span>
-                        <input type="password" name="password2_regsiter" required>
+                        <input type="password" name="password2_register" required>
                         <label>Jelszó újra</label>
                     </div>
                     <div class="aszf">
-                        <label><input type="checkbox">ÁSZF elfogadása</label>
+                        <label><input type="checkbox" name="aszf" required>ÁSZF elfogadása</label>
                     </div>
-                    <button type="submit" class="btn" formt="register-method">Regisztráció</button>
+                    <button type="submit" name="submit_reg" class="btn">Regisztráció</button>
                     <div class="login-regist">
-                        <p>Van már fiókod? <a href="#" class="login-link">Jelentkezz be!</a></p>
+                        <p>Van már fiókod? <a href="#log" class="login-link">Jelentkezz be!</a></p>
                     </div>
             </div>
         </form>
