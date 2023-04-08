@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -22,12 +26,18 @@
         <a class="inactive" href="tartasa.html"><i class="fa-solid fa-house"></i></a>
         <a class="inactive" href="jellemzoi.html"><i class="fa-solid fa-venus-mars"></i></a>
         <a class="inactive" href="elerhetoseg.html"><i class="fa-solid fa-phone"></i></a>
-        <a class="inactive" href="login.php"><i class="fa-solid fa-user"></i></a>
+        <?php
+            if (isset($_SESSION["id"])) {
+                echo "<a class='inactive' href='user.php'><i class='fa-solid fa-user'></i></a>";
+            } else {
+                echo "<a class='inactive' href='login.php'><i class='fa-solid fa-user'></i></a>";
+            }
+        ?>
     </div>
 
     <section id="chin1" class="chinwrap">
-        <h2>Egyebek</h2>
-        <p id="non">Válogass kedvedre! Minden ami kellhet még</p>
+        <h2>Játékok</h2>
+        <p id="non">Válogass elérhető játékaink közül!</p>
 
         <a href="kiegeszito.html" id="backbtn"><i class="fa-solid fa-arrow-left"></i></a>
         <button id="printbtn"><i class="fa-solid fa-print"></i></button>
@@ -35,70 +45,51 @@
         <div class="chinek">
             <div class="chin-con">
                 <div class="chin">
-                    <span id="nev">Csincsilla táp</span>
+                    <span class="nev">Csincsilla kerék</span>
                     <br>
-                    <img src="./assets/kepek/egyebek/tap.jpg" alt="tap">
-                    <p id="desc">
-                        A csincsilláknak különleges tápra van szüksége.
+                    <img src="./assets/kepek/jatekok/jatek1.jpg" alt="kerek">
+                    <p class="desc">
+                        A csincsillák általában jobban kedvelik az ilyen fajta kerekeket.
                         <br>
-                        Bár hasonlít más állatok tápjaira, csak csincsilláknak készült táp használható!
+                        Bár az "általánosabb" kerék is megteszi, mindenképpen ezt javasoljuk.
                     </p>
                     <br>
-                    <p id="price">
+                    <p class="price">
                         <br>
-                        Ár: 3.200 Ft.-
+                        Ár: 5.000 Ft.-
                     </p>
                 </div>
 
                 <div class="chin">
-                    <span class="nev">Görgős itató</span>
+                    <span class="nev">Szaloncukor</span>
                     <br>
-                    <img src="./assets/kepek/egyebek/itato.jpg" alt="itato">
+                    <img src="./assets/kepek/jatekok/jatek2.jpg" alt="szaloncukor">
                     <p class="desc">
-                        A csincsillák nem tálból isznak.
+                        Mászás, rágcsálás, ölelkezés.
                         <br>
-                        Nem szabad összetéveszteni őket ebben más állatokkal.
+                        Ez a fajta játék szinte mindenre jó.
                         <br>
-                        A hörcsöghöz hasonlóan, görgős itatóra van szükségük.
+                        Amennyire egyszerű, annyira nagyszerű!
                     </p>
                     <br>
                     <p class="price">
                         <br>
-                        Ár: 2.000 Ft.-
+                        Ár: 1.000 Ft.-
                     </p>
                 </div>
 
                 <div class="chin">
-                    <span class="nev">Csincsilla jutalomfalat</span>
+                    <span class="nev">Labda</span>
                     <br>
-                    <img src="./assets/kepek/egyebek/juti.jpg" alt="jutifalat">
+                    <img src="./assets/kepek/jatekok/jatek3.jpg" alt="labda">
                     <p class="desc">
-                        Habzsolni minden kisállat szeret. Így van ezzel a csincsilla is.
-                        <br>
-                        Imád falatozni, jutalmat kapni. Egészítsd ki a repertoárt jutalomfalattal!
+                        Ez a labda a legnagyszerűbb játékok alapja!
+                        Tudtad, hogy a csincsillák is szeretnek focizni?
                     </p>
                     <br>
                     <p class="price">
                         <br>
-                        Ár: 1.700 Ft.-
-                    </p>
-                </div>
-                
-                <div class="chin">
-                    <span class="nev">Kvarcmentes homok</span>
-                    <br>
-                    <img src="./assets/kepek/egyebek/homok.jpg" alt="homok">
-                    <p class="desc">
-                        A csincsilla fürdéséhez elengedhetetlen a prémium homok.
-                        <br>
-                        Nem elég neki a sima, "kerti homok", bizony kvarcmentesre van szüksége.
-                        <br>
-                        A jó homokot pedig, fényes és nagy bundával hálálja meg!
-                    </p>
-                    <br>
-                    <p class="price">
-                        <br>
-                        Ár: 4.000 Ft.-
+                        Ár: 1.000 Ft.-
                     </p>
                 </div>
             </div>

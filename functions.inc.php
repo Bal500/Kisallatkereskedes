@@ -82,3 +82,43 @@
         header("location: login.php#reg?error=none");
         exit();
     }
+
+    function emptyInputLogin($email_log, $password_log) {
+        $result = false;
+        if (empty($email_log) || empty($password_log)) {
+            $result = true;
+        } else {
+            $result = false;
+        }
+        return $result;
+    }
+
+    function loginUser($conn, $email_log, $password_log) {
+        $emailExists = emailExists($conn, $email_log);
+
+        if ($emailExists === false) {
+            echo "<script>
+                alert('Hiba! Az e-mail cím nem található!');
+                window.location.href = 'login.php#log';
+            </script>";
+            exit();
+        }
+
+        $passwordHashed_log = $emailExists["password"];
+        $checkPassword = password_verify($password_log, $passwordHashed_log);
+
+        if ($checkPassword === false) {
+            echo "<script>
+                alert('Hibás jelszó!');
+                window.location.href = 'login.php#log';
+            </script>";
+            exit();
+        } else if ($checkPassword === true) {
+            session_start();
+            $_SESSION["id"] = $emailExists["id"];
+            $_SESSION["email"] = $emailExists["email"];
+            header("location: elerheto.php");
+            exit();
+        }
+    }
+?>

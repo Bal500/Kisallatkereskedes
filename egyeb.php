@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -22,12 +26,18 @@
         <a class="inactive" href="tartasa.html"><i class="fa-solid fa-house"></i></a>
         <a class="inactive" href="jellemzoi.html"><i class="fa-solid fa-venus-mars"></i></a>
         <a class="inactive" href="elerhetoseg.html"><i class="fa-solid fa-phone"></i></a>
-        <a class="inactive" href="login.php"><i class="fa-solid fa-user"></i></a>
+        <?php
+            if (isset($_SESSION["id"])) {
+                echo "<a class='inactive' href='user.php'><i class='fa-solid fa-user'></i></a>";
+            } else {
+                echo "<a class='inactive' href='login.php'><i class='fa-solid fa-user'></i></a>";
+            }
+        ?>
     </div>
 
     <section id="chin1" class="chinwrap">
-        <h2>Ketrecek</h2>
-        <p id="non">Válogass elérhető ketreceink közül!</p>
+        <h2>Egyebek</h2>
+        <p id="non">Válogass kedvedre! Minden ami kellhet még</p>
 
         <a href="kiegeszito.html" id="backbtn"><i class="fa-solid fa-arrow-left"></i></a>
         <button id="printbtn"><i class="fa-solid fa-print"></i></button>
@@ -35,78 +45,70 @@
         <div class="chinek">
             <div class="chin-con">
                 <div class="chin">
-                    <span class="nev">Extra nagy ketrec</span>
+                    <span id="nev">Csincsilla táp</span>
                     <br>
-                    <img src="./assets/kepek/ketrecek/ketrec3.jpg" alt="xnagy">
-                    <p class="desc">
-                        A csincsillák abszolút kedvence!
+                    <img src="./assets/kepek/egyebek/tap.jpg" alt="tap">
+                    <p id="desc">
+                        A csincsilláknak különleges tápra van szüksége.
                         <br>
-                        Több emeletes, hatalmas, tág ketrec, amely a kisállat minden
-                        <br>
-                        apróbb - nagyobb igényét kielégítheti.
+                        Bár hasonlít más állatok tápjaira, csak csincsilláknak készült táp használható!
                     </p>
                     <br>
-                    <p class="price">
+                    <p id="price">
                         <br>
-                        Ár: 27.000 Ft.-
+                        Ár: 3.200 Ft.-
                     </p>
                 </div>
 
                 <div class="chin">
-                    <span class="nev">Nagy ketrec</span>
+                    <span class="nev">Görgős itató</span>
                     <br>
-                    <img src="./assets/kepek/ketrecek/ketrec1.jpg" alt="nagy">
+                    <img src="./assets/kepek/egyebek/itato.jpg" alt="itato">
                     <p class="desc">
-                        Az extra nagy ketrechez nagyon hasonló,
+                        A csincsillák nem tálból isznak.
                         <br>
-                        bár kevesebb játékkal rendelkező ketrec. Ez a darab
+                        Nem szabad összetéveszteni őket ebben más állatokkal.
                         <br>
-                        is kielégíti a csincsillák igényeit, de kevesebb szórakozással kecsegtet.
+                        A hörcsöghöz hasonlóan, görgős itatóra van szükségük.
                     </p>
                     <br>
                     <p class="price">
                         <br>
-                        Ár: 23.000 Ft.-
+                        Ár: 2.000 Ft.-
                     </p>
                 </div>
 
                 <div class="chin">
-                    <span class="nev">Közepes ketrec</span>
+                    <span class="nev">Csincsilla jutalomfalat</span>
                     <br>
-                    <img src="./assets/kepek/ketrecek/ketrec2.jpg" alt="kozepes">
+                    <img src="./assets/kepek/egyebek/juti.jpg" alt="jutifalat">
                     <p class="desc">
-                        Természetesen ez a ketrec is teljesen megfelel egy csincsillának.
+                        Habzsolni minden kisállat szeret. Így van ezzel a csincsilla is.
                         <br>
-                        Bár nem több emeletes, és nem olyan tágas, egy kis extra,
-                        <br>
-                        ketrecen kívül töltött idővel könnyen kompenzálhatjuk
-                        <br>
-                        a kisebb ketrec hátrányait. Ez a darab is
-                        <br>
-                        több játékkal érkezik, ideális választás lehet, ha nem szeretnénk sokat költeni.
+                        Imád falatozni, jutalmat kapni. Egészítsd ki a repertoárt jutalomfalattal!
                     </p>
                     <br>
                     <p class="price">
                         <br>
-                        Ár: 18.000 Ft.-
+                        Ár: 1.700 Ft.-
                     </p>
                 </div>
                 
                 <div class="chin">
-                    <span class="nev">Kis ketrec</span>
+                    <span class="nev">Kvarcmentes homok</span>
                     <br>
-                    <img src="./assets/kepek/ketrecek/ketrec4.jpg" alt="kicsi">
+                    <img src="./assets/kepek/egyebek/homok.jpg" alt="homok">
                     <p class="desc">
-                        Bár a célnak megfelel, vannak benne játékok is, a kisállat
+                        A csincsilla fürdéséhez elengedhetetlen a prémium homok.
                         <br>
-                        mozgástere enyhén korlátozva van. Ezzel a darabbal erősen ajánlott,
+                        Nem elég neki a sima, "kerti homok", bizony kvarcmentesre van szüksége.
                         <br>
-                        hogy a csincsillát több időre engedjük ki a ketrecből az átlagosnál.
+                        A jó homokot pedig, fényes és nagy bundával hálálja meg!
                     </p>
                     <br>
                     <p class="price">
                         <br>
-                        Ár: 15.000 Ft.-
+                        Ár: 4.000 Ft.-
                     </p>
                 </div>
             </div>
