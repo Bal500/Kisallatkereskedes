@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -19,7 +23,13 @@
         <a class="inactive" href="tartasa.html"><i class="fa-solid fa-house"></i></a>
         <a class="inactive" href="jellemzoi.html"><i class="fa-solid fa-venus-mars"></i></a>
         <a class="active" href="elerhetoseg.html"><i class="fa-solid fa-phone"></i></a>
-        <a class="inactive" href="login.php"><i class="fa-solid fa-user"></i></a>
+        <?php
+            if (isset($_SESSION["id"])) {
+                echo "<a class='inactive' href='user.php'><i class='fa-solid fa-user'></i></a>";
+            } else {
+                echo "<a class='inactive' href='login.php'><i class='fa-solid fa-user'></i></a>";
+            }
+        ?>
     </div>
 
     <div class="map">

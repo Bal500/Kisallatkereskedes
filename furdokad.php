@@ -22,12 +22,18 @@
         <a class="inactive" href="tartasa.html"><i class="fa-solid fa-house"></i></a>
         <a class="inactive" href="jellemzoi.html"><i class="fa-solid fa-venus-mars"></i></a>
         <a class="inactive" href="elerhetoseg.html"><i class="fa-solid fa-phone"></i></a>
-        <a class="inactive" href="login.php"><i class="fa-solid fa-user"></i></a>
+        <?php
+            if (isset($_SESSION["id"])) {
+                echo "<a class='inactive' href='user.php'><i class='fa-solid fa-user'></i></a>";
+            } else {
+                echo "<a class='inactive' href='login.php'><i class='fa-solid fa-user'></i></a>";
+            }
+        ?>
     </div>
 
     <section id="chin1" class="chinwrap">
-        <h2>Játékok</h2>
-        <p id="non">Válogass elérhető játékaink közül!</p>
+        <h2>Kádak</h2>
+        <p id="non">Válogass elérhető kádjaink közül!</p>
 
         <a href="kiegeszito.html" id="backbtn"><i class="fa-solid fa-arrow-left"></i></a>
         <button id="printbtn"><i class="fa-solid fa-print"></i></button>
@@ -35,51 +41,34 @@
         <div class="chinek">
             <div class="chin-con">
                 <div class="chin">
-                    <span class="nev">Csincsilla kerék</span>
+                    <span class="nev">Egérfüles kád</span>
                     <br>
-                    <img src="./assets/kepek/jatekok/jatek1.jpg" alt="kerek">
+                    <img src="./assets/kepek/kadak/kad2.jpg" alt="fules">
                     <p class="desc">
-                        A csincsillák általában jobban kedvelik az ilyen fajta kerekeket.
+                        Bár a formája szinte mindegy, mégis nagyon aranyos választás lehet!
                         <br>
-                        Bár az "általánosabb" kerék is megteszi, mindenképpen ezt javasoljuk.
+                        A csincsillád imádni fogja!
                     </p>
                     <br>
                     <p class="price">
                         <br>
-                        Ár: 5.000 Ft.-
+                        Ár: 3.000 Ft.-
                     </p>
                 </div>
 
                 <div class="chin">
-                    <span class="nev">Szaloncukor</span>
+                    <span class="nev">Fürdőkád</span>
                     <br>
-                    <img src="./assets/kepek/jatekok/jatek2.jpg" alt="szaloncukor">
+                    <img src="./assets/kepek/kadak/kad1.jpg" alt="kad">
                     <p class="desc">
-                        Mászás, rágcsálás, ölelkezés.
+                        Egyszerű, műanyag kád. Csak töltsd fel,
                         <br>
-                        Ez a fajta játék szinte mindenre jó.
-                        <br>
-                        Amennyire egyszerű, annyira nagyszerű!
+                        és indulhat is a móka! Ne aggódj, egy dagi kisállat is belefér!
                     </p>
                     <br>
                     <p class="price">
                         <br>
-                        Ár: 1.000 Ft.-
-                    </p>
-                </div>
-
-                <div class="chin">
-                    <span class="nev">Labda</span>
-                    <br>
-                    <img src="./assets/kepek/jatekok/jatek3.jpg" alt="labda">
-                    <p class="desc">
-                        Ez a labda a legnagyszerűbb játékok alapja!
-                        Tudtad, hogy a csincsillák is szeretnek focizni?
-                    </p>
-                    <br>
-                    <p class="price">
-                        <br>
-                        Ár: 1.000 Ft.-
+                        Ár: 2.000 Ft.-
                     </p>
                 </div>
             </div>

@@ -1,4 +1,8 @@
 <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     require_once 'dbh.inc.php';
     function emptyInputSignup($name, $email, $password, $password2) {
         $result = false;
@@ -79,7 +83,6 @@
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("location: login.php?error=stmtfailed");
-            //header("location: login.php#reg");
             exit();
         }
 
@@ -88,7 +91,47 @@
         mysqli_stmt_bind_param($stmt, "sss", $name, $email, $hashedPassword);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
-        //$success_reg = "A regisztáció sikeres volt!";
         header("location: login.php#reg?error=none");
         exit();
     }
+
+    function emptyInputLogin($email_log, $password_log) {
+        $result = false;
+        if (empty($email_log) || empty($password_log)) {
+            $result = true;
+        } else {
+            $result = false;
+        }
+        return $result;
+    }
+
+    function loginUser($conn, $email_log, $password_log) {
+        $emailExists = emailExists($conn, $email_log);
+
+        if ($emailExists === false) {
+            echo "<script>
+                alert('Hiba! Az e-mail cím nem található!');
+                window.location.href = 'login.php#log';
+            </script>";
+            exit();
+        }
+
+        $passwordHashed_log = $emailExists["password"];
+        $checkPassword = password_verify($password_log, $passwordHashed_log);
+
+        if ($checkPassword === false) {
+            echo "<script>
+                alert('Hibás jelszó!');
+                window.location.href = 'login.php#log';
+            </script>";
+            exit();
+        } else if ($checkPassword === true) {
+            session_start();
+            $_SESSION["id"] = $emailExists["id"];
+            $_SESSION["email"] = $emailExists["email"];
+            $_SESSION["name"] = $emailExists["name"];
+            header("location: elerheto.php");
+            exit();
+        }
+    }
+?>
