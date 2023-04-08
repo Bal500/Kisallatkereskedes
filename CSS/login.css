@@ -46,7 +46,7 @@
     transform: translateX(0px);
 }
 
-h2 {
+.wrapper h2 {
     font-size: 2em;
     color: #3A3B3C;
     text-align: center;
