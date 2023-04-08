@@ -83,7 +83,7 @@
                         <label>Jelszó újra</label>
                     </div>
                     <div class="aszf">
-                        <label><input type="checkbox">ÁSZF elfogadása</label>
+                        <label><input type="checkbox" name="aszf" required>ÁSZF elfogadása</label>
                     </div>
                     <button type="submit" name="submit_reg" class="btn">Regisztráció</button>
                     <div class="login-regist">

@@ -43,6 +43,13 @@
             </script>";
             exit();
         }
+        if (missingToS() !== false) {
+            echo "<script>
+                alert('Hiba! Az ÁSZF elfogadása feltétele az oldalra való regisztrációnak! Próbáld újra!');
+                window.location.href = 'login.php#reg';
+            </script>";
+            exit();
+        }
 
         createUser($conn, $name, $email, $password);
     } else {

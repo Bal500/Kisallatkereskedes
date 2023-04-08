@@ -58,10 +58,20 @@
             return $row;
         } else {
             $result = false;
-            return $result;
         }
 
         mysqli_stmt_close($stmt);
+        return $result;
+    }
+
+    function missingToS() {
+        $result = false;
+        if (!isset($_POST["aszf"])) {
+            $result = true;
+        } else {
+            $result = false;
+        }
+        return $result;
     }
 
     function createUser($conn, $name, $email, $password) {
