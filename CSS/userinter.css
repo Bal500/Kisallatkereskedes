@@ -1,0 +1,59 @@
+.sidebar {
+    color: #3A3B3C;
+    margin-left: 50px;
+    animation: fadeIn 1s;
+    transition: height .2s ease;
+    font-size: 15px;
+    border-right: 1px solid #3A3B3C;
+    margin-right: 1175px;
+}
+
+.user_data {
+    font-size: xx-large;
+    margin: 10px 0px;
+}
+
+#pp {
+    border: 10px double #3A3B3C;
+    outline: auto;
+    border-radius: 5px;
+}
+
+.defaultbtn:hover {
+    background-color: #3A3B3C;
+    color: white;
+    transition: .3s;
+}
+
+#delete_account:hover {
+    background-color: red;
+    color: white;
+    transition: .3s;
+}
+
+.buttons button {
+    width: 200px;
+    background: transparent;
+    color: #3A3B3C;
+    border-radius: 5px;
+    font-size: larger;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.defaultbtn {
+    border: 1px solid #3A3B3C;
+    color: #3A3B3C;
+}
+
+#delete_account {
+    border: 1px solid red;
+    color: red;
+}
+
+.buttons span {
+    padding-left: 5px;
+}
