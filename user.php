@@ -41,7 +41,7 @@
                 echo $_SESSION["name"];
             ?>
         </div>
-        <img id="pp" src="./assets/kepek/user/defaultPP2.jpg" alt="profilkep" width="200" height="200">
+        <img id="pp" src="./assets/kepek/user/defaultPP.jpg" alt="profilkep" width="200" height="200">
 
         <div class="buttons">
             <button class="defaultbtn"><i class="fa-solid fa-person"></i><span>Személyes adatok</span></button>

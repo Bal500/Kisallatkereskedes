@@ -6,6 +6,12 @@
     font-size: 15px;
     border-right: 1px solid #3A3B3C;
     margin-right: 1175px;
+    position: sticky;
+    position: -webkit-sticky;
+    height: 100%;
+    border-right: 1px solid #3A3B3C;
+    box-shadow: 2px 0 1px rgba(58, 59, 60, 0.3);
+    position: fixed;
 }
 
 .user_data {
@@ -41,7 +47,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 35px;
+    margin-top: 25px;
 }
 
 .defaultbtn {
