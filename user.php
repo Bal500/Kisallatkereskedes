@@ -48,8 +48,8 @@
             <button class="defaultbtn"><i class="fa-solid fa-user-secret"></i><span>Láthatóság</span></button>
             <button class="defaultbtn"><i class="fa-solid fa-lock"></i><span>Biztonság</span></button>
             <button class="defaultbtn"><i class="fa-solid fa-comments"></i><span>Chat</span></button>
-            <button onclick="window.location='logout.inc.php'"class="defaultbtn"><i class="fa-solid fa-right-from-bracket"></i><span>Kijelentkezés</span></button>
-            <button id="delete_account"><i class="fa-solid fa-trash"></i><span>Fiók törlése</span></button>
+            <button onclick="window.location='logout.inc.php'" class="defaultbtn"><i class="fa-solid fa-right-from-bracket"></i><span>Kijelentkezés</span></button>
+            <button onclick="window.location='confirmation.inc.php'" id="delete_account"><i class="fa-solid fa-trash"></i><span>Fiók törlése</span></button>
         </div>
     </div>
     
