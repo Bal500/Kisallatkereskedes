@@ -38,7 +38,7 @@
         <p>Válogass elérhető kiegészítőink közül!</p>
         <div class="chinek">
             <div class="chin-con">
-                <a href="ketrecek.html">
+                <a href="ketrecek.php">
                     <div class="prod">
                         <span class="nev">Ketrecek</span>
                         <br>
@@ -53,7 +53,7 @@
                     </div>
                 </a>
 
-                <a href="furdokad.html">
+                <a href="furdokad.php">
                     <div class="prod">
                         <span class="nev">Kádak</span>
                         <br>
@@ -68,7 +68,7 @@
                     </div>
                 </a>
                 
-                <a href="jatekok.html">
+                <a href="jatekok.php">
                     <div class="prod">
                         <span class="nev">Játékok</span>
                         <br>
@@ -83,7 +83,7 @@
                     </div>
                 </a>
                 
-                <a href="egyeb.html">
+                <a href="egyeb.php">
                     <div class="prod">
                     <span class="nev">Egyéb</span>
                     <br>
