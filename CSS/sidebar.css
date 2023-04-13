@@ -5,13 +5,14 @@
     transition: height .2s ease;
     font-size: 15px;
     border-right: 1px solid #3A3B3C;
-    margin-right: 1150px;
+    margin-right: 1150px; /* ő helyezi el a függőleges vonalat */
     position: sticky;
     position: -webkit-sticky;
     height: 100%;
     border-right: 1px solid #3A3B3C;
     box-shadow: 2px 0 1px rgba(58, 59, 60, 0.3);
     position: fixed;
+    display: block;
 }
 
 .user_data {
