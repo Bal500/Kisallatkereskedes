@@ -256,7 +256,7 @@
                 <form method="post" action="">
                     <div class="chat-input">
                         <input type="text" name="message" placeholder="Írd ide az üzeneted...">
-                        <input type="submit" name="send" value="Küldés">
+                        <button class="chatbtn" type="submit"><i class="fa-solid fa-share"></i><span>Küldés</span></button>
                     </div>
                 </form>
             </div>
