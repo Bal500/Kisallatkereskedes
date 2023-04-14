@@ -178,7 +178,8 @@ textarea {
     top: 500px
 }
 
-.savebtn span {
+.savebtn span,
+.savebtn-new span {
     padding-left: 10px;
 }
 

@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once 'personalinfo.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -67,8 +68,8 @@
     </div>
     
     <div class="data">
-        <div class="userinfoForm">
-            <form>
+        <div class="userinfoForm active">
+            <form method="post" action="personal.inc.php">
                 <label>
                     <div class="namer">
                         <span class="identifier">Név:</span>
@@ -79,13 +80,13 @@
                     <div class=dob>
                         <span class="identifier">Születési idő:</span>
                         <br>
-                            <input class="inner" type="date" name="birthdate">
+                            <input class="inner" type="date" name="birthdate" value="<?php echo $_SESSION["birthDate"];?>">
                     </div>
                 </label>
                 <label>
                     <div class="bio">
                         <span class="identifier">Bio:</span>
-                            <textarea class="inner" name="bio" width=400px height=230px placeholder="Mesélj magadról, hogy jobban megismerhessünk..."></textarea>
+                            <textarea class="inner" name="bio" width=400px height=230px placeholder="Mesélj magadról, hogy jobban megismerhessünk..." value="<?php echo $_SESSION["bio"];?>"></textarea>
                     </div>
                     
                 </label>
@@ -93,7 +94,7 @@
                     <div class=daily>
                         <span class="identifier">Napi csincsillával töltött idő:</span>
                         <br>
-                        <select name="cars" class="inner">
+                        <select name="chintime" class="inner" value="<?php echo $_SESSION["dailyTime"];?>">
                             <option>Nincs csincsillám</option>
                             <option>Kevesebb, mint 1 óra</option>
                             <option>1-2 óra</option>
@@ -106,15 +107,15 @@
                     <div class="fav">
                         <span class="identifier">Kedvenc csincsilla a boltunkból:</span>
                         <div class=inner>
-                            <input type="radio" name="favchin"> Puffancs
+                            <input type="radio" name="favchin" value="puffancs"> Puffancs
                             <br>
-                            <input type="radio" name="favchin"> Kókusz
+                            <input type="radio" name="favchin" value="kokusz"> Kókusz
                             <br>
-                            <input type="radio" name="favchin"> Hamu
+                            <input type="radio" name="favchin" value="hamu"> Hamu
                             <br>
-                            <input type="radio" name="favchin"> Nutella
+                            <input type="radio" name="favchin" value="nutella"> Nutella
                             <br>
-                            <input type="radio" name="favchin"> Mochi
+                            <input type="radio" name="favchin" value="mochi"> Mochi
                         </div>
                     </div>
                     
@@ -133,10 +134,10 @@
                     <div class="longlove">
                         <span class="identifier">Mióta imádod a csincsillákat?</span>
                         <br>
-                            <input class="inner" type="number" id="year_selector" min="1900" max="2099" step="1" value="2023">
+                            <input class="inner" type="number" name="year_selector" id="year_selector" min="1900" max="2099" step="1" value="<?php echo $_SESSION["loveTime"];?>">
                     </div>
                 </label>
-                <button class="savebtn"><i class="fa-solid fa-floppy-disk"></i><span>Mentés</span></button>
+                <button class="savebtn" type="submit" name="submit_personal"><i class="fa-solid fa-floppy-disk"></i><span>Mentés</span></button>
             </form>
         </div>
         
@@ -209,22 +210,24 @@
 
         <div class="securityForm">
             <label>
-                <div class="passchanger">
-                    <span class="identifier">Jelenlegi jelszó:</span>
-                    <br>
-                    <input class="inner" type="password" name="currpass">
-                </div>
-                <div class="passchanger">
-                    <span class="identifier">Új jelszó:</span>
-                    <br>
-                    <input class="inner" type="password" name="newpass">
-                </div>
-                <div class="passchanger">
-                    <span class="identifier">Új jelszó újra:</span>
-                    <br>
-                    <input class="inner" type="password" name="newpass2">
-                </div>
-                <button class="savebtn-new"><i class="fa-solid fa-floppy-disk"></i><span>Mentés</span></button>
+                <form action="passwordmanager.inc.php" method="post">
+                    <div class="passchanger">
+                        <span class="identifier">Jelenlegi jelszó:</span>
+                        <br>
+                        <input class="inner" type="password" name="currpass">
+                    </div>
+                    <div class="passchanger">
+                        <span class="identifier">Új jelszó:</span>
+                        <br>
+                        <input class="inner" type="password" name="newpass">
+                    </div>
+                    <div class="passchanger">
+                        <span class="identifier">Új jelszó újra:</span>
+                        <br>
+                        <input class="inner" type="password" name="newpass2">
+                    </div>
+                    <button class="savebtn-new" type="submit" name="passchanger"><i class="fa-solid fa-floppy-disk"></i><span>Mentés</span></button>
+                </form>
             </label>
         </div>
 
@@ -250,10 +253,12 @@
                         <p>Aha, az király lenne! Hol találkozzunk?</p>
                     </div>
                 </div>
-                <div class="chat-input">
-                    <input type="text" placeholder="Írd ide az üzeneted...">
-                    <button class="chatbtn"><i class="fa-solid fa-share"></i><span>Küldés</span></button>
-                </div>
+                <form method="post" action="">
+                    <div class="chat-input">
+                        <input type="text" name="message" placeholder="Írd ide az üzeneted...">
+                        <input type="submit" name="send" value="Küldés">
+                    </div>
+                </form>
             </div>
         </div>
     </div>

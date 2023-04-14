@@ -35,7 +35,7 @@
         <h2>Kádak</h2>
         <p id="non">Válogass elérhető kádjaink közül!</p>
 
-        <a href="kiegeszito.html" id="backbtn"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="kiegeszito.php" id="backbtn"><i class="fa-solid fa-arrow-left"></i></a>
         <button id="printbtn"><i class="fa-solid fa-print"></i></button>
 
         <div class="chinek">
@@ -75,5 +75,6 @@
         </div>
     </section>
     <script src="./assets/JS/print.js"></script>
+    <script src="./assets/JS/userinter.js"></script>
 </body>
 </html>
