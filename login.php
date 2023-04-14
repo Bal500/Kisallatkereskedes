@@ -49,7 +49,7 @@
                     </div>
     
                     <div class="remember-forgot">
-                        <label><input type="checkbox">Emlékezz rám | </label><a href="#">Elfelejtetted a jelszavad?</a>
+                        <a href="#">Elfelejtetted a jelszavad?</a>
                     </div>
     
                     <button type="submit" name="submit" class="btn">Belépés</button>
@@ -95,5 +95,6 @@
         </form>
     </div>
     <script src="./assets/JS/login.js"></script>
+    <script src="./assets/JS/userinter.js"></script>
 </body>
 </html>

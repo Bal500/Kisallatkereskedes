@@ -149,5 +149,6 @@
         </div>
     </footer>
     <script src="./assets/JS/csinhang.js"></script>
+    <script src="./assets/JS/userinter.js"></script>
 </body>
 </html>
