@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="./CSS/szoveg.css">
     <link rel="stylesheet" href="./CSS/anim.css">
     <link rel="stylesheet" href="./CSS/iconbar.css">
-    <link rel="stylesheet" href="./CSS/login.css">
     <link rel="stylesheet" href="./CSS/toltokep.css">
     <link rel="stylesheet" href="./CSS/back.css">
     <link rel="stylesheet" href="./CSS/sidebar.css">
@@ -69,27 +68,27 @@
     <div class="data">
         <div class="userinfoForm active">
             <form method="post" action="personal.inc.php" onsubmit="return confirm('A változtatások csak ki- és bejelentkezés után lesznek láthatóak!')">
-                <label>
+                <div class="wrapper">
                     <div class="namer">
                         <span class="identifier">Név:</span>
                         <input class="inner" type="text" name="name" placeholder="Itt módosíthatod a neved..." value="<?php echo $_SESSION["name"];?>">
                     </div>
-                </label>
-                <label>
+                </div>
+                <div class="wrapper">
                     <div class=dob>
                         <span class="identifier">Születési idő:</span>
                         <br>
                             <input class="inner" type="date" name="birthdate" value="<?php echo $_SESSION["birthDate"];?>">
                     </div>
-                </label>
-                <label>
+                </div>
+                <div class="wrapper">
                     <div class="bio">
                         <span class="identifier">Bio:</span>
-                            <textarea class="inner" name="bio" width=400px height=230px placeholder="Mesélj magadról, hogy jobban megismerhessünk..."><?php echo $_SESSION['bio'];?></textarea>
+                            <textarea class="inner" name="bio" placeholder="Mesélj magadról, hogy jobban megismerhessünk..."><?php echo $_SESSION['bio'];?></textarea>
                     </div>
                     
-                </label>
-                <label>
+                </div>
+                <div class="wrapper">
                     <div class=daily>
                         <span class="identifier">Napi csincsillával töltött idő:</span>
                         <br>
@@ -101,8 +100,8 @@
                             <option <?php if($_SESSION["dailyTime"]=="Több, mint 5 óra") echo "selected"; ?>>Több, mint 5 óra</option>
                         </select>
                     </div>
-                </label>
-                <label>
+                </div>
+                <div class="wrapper">
                     <div class="fav">
                         <span class="identifier">Kedvenc csincsilla a boltunkból:</span>
                         <div class=inner>
@@ -116,9 +115,8 @@
                             </select>
                         </div>
                     </div>
-                    
-                </label>
-                <label>
+                </div>
+                <div class="wrapper">
                     <div class="owner">
                         <span class="identifier">Van csincsillád?</span>
                         <div class=inner>
@@ -128,21 +126,21 @@
                         </select>
                         </div>
                     </div>
-                </label>
-                <label>
+                </div>
+                <div class="wrapper">
                     <div class="longlove">
                         <span class="identifier">Mióta imádod a csincsillákat?</span>
                         <br>
                             <input class="inner" type="number" name="year_selector" id="year_selector" min="1900" max="2099" step="1" value="<?php echo $_SESSION["loveTime"];?>">
                     </div>
-                </label>
+                </div>
                 <button class="savebtn" type="submit" name="submit_personal"><i class="fa-solid fa-floppy-disk"></i><span>Mentés</span></button>
             </form>
         </div>
         
         <div class="privacyForm">
             <form>
-                <label>
+                <div class="wrapper">
                     <div class=left>
                         <span class="identifier">Születési idő:</span>
                         <select name="pubpri" class="inner">
@@ -150,8 +148,8 @@
                             <option>Privát</option>
                         </select>
                     </div>
-                </label>
-                <label>
+                </div>
+                <div class="wrapper">
                     <div class="left">
                         <span class="identifier">Bio:</span>
                         <br>
@@ -160,9 +158,8 @@
                             <option>Privát</option>
                         </select>
                     </div>
-                    
-                </label>
-                <label>
+                </div>
+                <div class="wrapper">
                     <div class=left>
                         <span class="identifier">Napi csincsillával töltött idő:</span>
                         <br>
@@ -171,8 +168,8 @@
                             <option>Privát</option>
                         </select>
                     </div>
-                </label>
-                <label>
+                </div>
+                <div class="wrapper">
                     <div class="right">
                         <span class="identifier">Kedvenc csincsilla a boltunkból:</span>
                         <br>
@@ -181,9 +178,8 @@
                             <option>Privát</option>
                         </select>
                     </div>
-                    
-                </label>
-                <label>
+                </div>
+                <div class="wrapper">
                     <div class="right2">
                         <span class="identifier">Van csincsillád?</span>
                         <br>
@@ -192,8 +188,8 @@
                             <option>Privát</option>
                         </select>
                     </div>
-                </label>
-                <label>
+                </div>
+                <div class="wrapper">
                     <div class="right3">
                         <span class="identifier">Mióta imádod a csincsillákat?</span>
                         <br>
@@ -202,13 +198,13 @@
                             <option>Privát</option>
                         </select>
                     </div>
-                </label>
+                </div>
                 <button class="savebtn"><i class="fa-solid fa-floppy-disk"></i><span>Mentés</span></button>
             </form>
         </div>
 
         <div class="securityForm">
-            <label>
+            <div class="wrapper">
                 <form action="passwordmanager.inc.php" method="post">
                     <div class="passchanger">
                         <span class="identifier">Jelenlegi jelszó:</span>
@@ -227,7 +223,7 @@
                     </div>
                     <button class="savebtn-new" type="submit" name="passchanger"><i class="fa-solid fa-floppy-disk"></i><span>Mentés</span></button>
                 </form>
-            </label>
+            </div>
         </div>
 
         <div class="chatForm">
@@ -252,7 +248,7 @@
                         <p>Aha, az király lenne! Hol találkozzunk?</p>
                     </div>
                 </div>
-                <form method="post" action="">
+                <form method="post">
                     <div class="chat-input">
                         <input type="text" name="message" placeholder="Írd ide az üzeneted...">
                         <button class="chatbtn" type="submit"><i class="fa-solid fa-share"></i><span>Küldés</span></button>
