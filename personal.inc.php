@@ -1,11 +1,6 @@
 <?php
-    session_start();
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-
     require_once 'dbh.inc.php';
-    require_once 'getpersonal.inc.php';
+    require_once 'functions.inc.php';
 
 
     if (isset($_POST["submit_personal"])) {
@@ -33,14 +28,12 @@
             $stmt->bind_param("issssss", $userID, $bio, $birthdate, $dailyTime, $loveTime, $favChin, $ownsChinchilla);
         }
 
-        getPersonal($conn);
-
         $stmt->execute();
 
         $stmt->close();
         $conn->close();
     }
-
+    
     header("location: user.php");
     exit();
 ?>

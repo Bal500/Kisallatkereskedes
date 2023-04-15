@@ -85,7 +85,7 @@
                 <label>
                     <div class="bio">
                         <span class="identifier">Bio:</span>
-                            <textarea class="inner" name="bio" width=400px height=230px placeholder="Mesélj magadról, hogy jobban megismerhessünk..." value="<?php echo $_SESSION['bio'];?>"></textarea>
+                            <textarea class="inner" name="bio" width=400px height=230px placeholder="Mesélj magadról, hogy jobban megismerhessünk..."><?php echo $_SESSION['bio'];?></textarea>
                     </div>
                     
                 </label>
@@ -93,12 +93,12 @@
                     <div class=daily>
                         <span class="identifier">Napi csincsillával töltött idő:</span>
                         <br>
-                        <select name="chintime" class="inner" value="<?php echo $_SESSION["dailyTime"];?>">
-                            <option>Nincs csincsillám</option>
-                            <option>Kevesebb, mint 1 óra</option>
-                            <option>1-2 óra</option>
-                            <option>3-5 óra</option>
-                            <option>Több, mint 5 óra</option>
+                        <select name="chintime" class="inner">
+                            <option <?php if($_SESSION["dailyTime"]=="Nincs csincsillám") echo "selected"; ?>>Nincs csincsillám</option>
+                            <option <?php if($_SESSION["dailyTime"]=="Kevesebb, mint 1 óra") echo "selected"; ?>>Kevesebb, mint 1 óra</option>
+                            <option <?php if($_SESSION["dailyTime"]=="1-2 óra") echo "selected"; ?>>1-2 óra</option>
+                            <option <?php if($_SESSION["dailyTime"]=="3-5 óra") echo "selected"; ?>>3-5 óra</option>
+                            <option <?php if($_SESSION["dailyTime"]=="Több, mint 5 óra") echo "selected"; ?>>Több, mint 5 óra</option>
                         </select>
                     </div>
                 </label>
@@ -106,13 +106,13 @@
                     <div class="fav">
                         <span class="identifier">Kedvenc csincsilla a boltunkból:</span>
                         <div class=inner>
-                            <select name="favchin" value="<?php echo $_SESSION["favChin"];?>">
-                                <option>Mindet imádom!</option>
-                                <option>Puffancs</option>
-                                <option>Kókusz</option>
-                                <option>Hamu</option>
-                                <option>Nutella</option>
-                                <option>Mochi</option>
+                            <select name="favchin">
+                                <option <?php if ($_SESSION["favChin"] == "Mindet imádom!") {echo "selected";} ?>>Mindet imádom!</option>
+                                <option <?php if ($_SESSION["favChin"] == "Puffancs") {echo "selected";} ?>>Puffancs</option>
+                                <option <?php if ($_SESSION["favChin"] == "Kókusz") {echo "selected";} ?>>Kókusz</option>
+                                <option <?php if ($_SESSION["favChin"] == "Hamu") {echo "selected";} ?>>Hamu</option>
+                                <option <?php if ($_SESSION["favChin"] == "Nutella") {echo "selected";} ?>>Nutella</option>
+                                <option <?php if ($_SESSION["favChin"] == "Mochi") {echo "selected";} ?>>Mochi</option>
                             </select>
                         </div>
                     </div>
@@ -122,10 +122,10 @@
                     <div class="owner">
                         <span class="identifier">Van csincsillád?</span>
                         <div class=inner>
-                            <select name="owns_chinchilla" value="<?php echo $_SESSION["owner"];?>">
-                                <option>Nincs</option>
-                                <option>Van</option>
-                            </select>
+                        <select name="owns_chinchilla">
+                            <option value="Nincs"<?php if ($_SESSION["owner"] === "Nincs") echo " selected"; ?>>Nincs</option>
+                            <option value="Van"<?php if ($_SESSION["owner"] === "Van") echo " selected"; ?>>Van</option>
+                        </select>
                         </div>
                     </div>
                 </label>
