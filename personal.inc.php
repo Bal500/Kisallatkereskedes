@@ -1,10 +1,12 @@
 <?php
+    session_start();
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-    session_start();
     require_once 'dbh.inc.php';
+    require_once 'functions.inc.php';
+
 
     if (isset($_POST["submit_personal"])) {
         $birthdate = $_POST["birthdate"];
@@ -36,7 +38,7 @@
         $stmt->close();
         $conn->close();
     }
-
+    
     header("location: user.php");
     exit();
 ?>

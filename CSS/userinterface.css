@@ -52,8 +52,8 @@
 
 .owner {
     position: relative;
-    top: 200px;
-    left: 500px;
+    top: 270px;
+    width: 100%;
 }
 
 .userinfoForm,
