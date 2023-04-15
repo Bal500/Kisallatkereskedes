@@ -47,10 +47,6 @@
                     <label>Jelszó</label>
                 </div>
     
-                <div class="remember-forgot">
-                    <a href="#">Elfelejtetted a jelszavad?</a>
-                </div>
-    
                 <button type="submit" name="submit" class="btn">Belépés</button>
 
                 <div class="login-regist">
