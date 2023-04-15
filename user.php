@@ -1,6 +1,5 @@
 <?php
     session_start();
-    require_once 'personalinfo.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +85,7 @@
                 <label>
                     <div class="bio">
                         <span class="identifier">Bio:</span>
-                            <textarea class="inner" name="bio" width=400px height=230px placeholder="Mesélj magadról, hogy jobban megismerhessünk..." value="<?php echo $_SESSION["bio"];?>"></textarea>
+                            <textarea class="inner" name="bio" width=400px height=230px placeholder="Mesélj magadról, hogy jobban megismerhessünk..." value="<?php echo $_SESSION['bio'];?>"></textarea>
                     </div>
                     
                 </label>
@@ -107,15 +106,14 @@
                     <div class="fav">
                         <span class="identifier">Kedvenc csincsilla a boltunkból:</span>
                         <div class=inner>
-                            <input type="radio" name="favchin" value="puffancs"> Puffancs
-                            <br>
-                            <input type="radio" name="favchin" value="kokusz"> Kókusz
-                            <br>
-                            <input type="radio" name="favchin" value="hamu"> Hamu
-                            <br>
-                            <input type="radio" name="favchin" value="nutella"> Nutella
-                            <br>
-                            <input type="radio" name="favchin" value="mochi"> Mochi
+                            <select name="favchin" value="<?php echo $_SESSION["favChin"];?>">
+                                <option>Mindet imádom!</option>
+                                <option>Puffancs</option>
+                                <option>Kókusz</option>
+                                <option>Hamu</option>
+                                <option>Nutella</option>
+                                <option>Mochi</option>
+                            </select>
                         </div>
                     </div>
                     
@@ -124,9 +122,10 @@
                     <div class="owner">
                         <span class="identifier">Van csincsillád?</span>
                         <div class=inner>
-                            <input type="radio" name="owns_chinchilla" value="yes"> Van
-                            <br>
-                            <input type="radio" name="owns_chinchilla" value="no"> Nincs
+                            <select name="owns_chinchilla" value="<?php echo $_SESSION["owner"];?>">
+                                <option>Nincs</option>
+                                <option>Van</option>
+                            </select>
                         </div>
                     </div>
                 </label>
