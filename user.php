@@ -68,7 +68,7 @@
     
     <div class="data">
         <div class="userinfoForm active">
-            <form method="post" action="personal.inc.php">
+            <form method="post" action="personal.inc.php" onsubmit="return confirm('A változtatások csak ki- és bejelentkezés után lesznek láthatóak!')">
                 <label>
                     <div class="namer">
                         <span class="identifier">Név:</span>
