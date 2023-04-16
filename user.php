@@ -232,31 +232,19 @@
                     <h2>Chat</h2>
                 </div>
                 <div class="chat-messages">
-                    <div class="message received">
-                        <span class="sender">János</span>
-                        <p>Hali, mizu?</p>
-                    </div>
-                    <div class="message received">
-                        <span class="sender">Józsi</span>
-                        <p>Szia! Erre minden pacek! <?php echo $_SESSION["name"]?>, veled minden OK?</p>
-                    </div>
-                    <div class="message sent">
-                        <p>Persze, csak a szokásos. Összefutunk a hétvégén?</p>
-                    </div>
-                    <div class="message received">
-                        <span class="sender">János</span>
-                        <p>Aha, az király lenne! Hol találkozzunk?</p>
-                    </div>
+                    <!-- meglévő üzenetek megjelenítése -->
                 </div>
-                <form method="post">
+                <form id="chat-form">
                     <div class="chat-input">
                         <input type="text" name="message" placeholder="Írd ide az üzeneted...">
-                        <button class="chatbtn" type="submit"><i class="fa-solid fa-share"></i><span>Küldés</span></button>
+                        <button class="chatbtn" type="submit" name="send"><i class="fa-solid fa-share"></i><span>Küldés</span></button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/JS/userinter.js"></script>
+    <script src="./assets/JS/chat.js"></script>
 </body>
 </html>

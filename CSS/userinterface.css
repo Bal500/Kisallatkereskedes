@@ -189,9 +189,12 @@ textarea {
     border-radius: 20px;
     padding: 20px;
     margin: 20px auto;
-    width: 80%;
-    max-width: 800px;
+    width: 640px;
     height: 480px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .chat-header {
@@ -237,7 +240,9 @@ textarea {
 }
 
 .chat-input {
+    margin-top: auto;
     display: flex;
+    justify-content: space-between;
 }
 
 .chat-input input[type="text"] {
